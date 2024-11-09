@@ -1,0 +1,25 @@
+{
+  "name": "poplin-challenge",
+  "version": "1.0.0",
+  "description": "Node Project - Poplin Challenge QA Automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run --headed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minjor/Poplin-Challenge.git"
+  },
+  "keywords": [
+    "poplin"
+  ],
+  "author": "Martín Peña",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Minjor/Poplin-Challenge/issues"
+  },
+  "homepage": "https://github.com/Minjor/Poplin-Challenge#readme",
+  "dependencies": {
+    "cypress": "^13.15.2"
+  }
+}
