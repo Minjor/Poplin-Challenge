@@ -12,6 +12,7 @@ This repository contains the automated test suite for the "Order Placed" workflo
   - [Test Coverage](#test-coverage)
   - [Setup and Execution](#setup-and-execution)
     - [Prerequisites](#prerequisites)
+  - [Notes](#notes)
 
 ---
 
@@ -19,13 +20,13 @@ This repository contains the automated test suite for the "Order Placed" workflo
 - **/cypress/e2e/** - Contains test scripts for the "Order Placed" workflow.
 - **/cypress/fixtures/** - Data files used within the tests.
 - **/cypress/support/** - Custom Cypress commands and support files.
-- **cypress.json** - Cypress configuration file.
+- **cypress.config.js** - Cypress configuration file.
 - **README.md** - Project documentation and usage instructions.
 
 ## Framework and Tools
-- **Cypress** - Chosen for its modern approach to automation, ease of use, and reliability for end-to-end testing.
-- **Node.js** - Dependency management and script execution.
-- **Mocha** (default test framework with Cypress) - Test structure and reporting.
+- **Cypress**
+- **Node.js**
+- **Mocha**
 
 ## Test Coverage
 The automated tests validate:
@@ -36,20 +37,19 @@ The automated tests validate:
 2. **Edge Cases**:
    - Invalid inputs, such as incorrect credit card details.
    - Network connectivity interruptions during the order placement.
-   - Address validation failures through Google API issues.
    
 3. **Input/Output Validation**:
    - Ensures proper handling of inputs and outputs.
    
-Each test case mirrors a manually defined use case, with scripts stored in `/cypress/integration/tests/`.
+Each test case mirrors a manually defined use case, with scripts stored in `/cypress/e2e/`.
 
 ## Setup and Execution
 
 ### Prerequisites
-1. Install [Node.js](https://nodejs.org/en/download/).
+1. Install [Node.js](https://nodejs.org/en/download/) and [Git](https://git-scm.com/downloads).
 2. Clone this repository:
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/Minjor/Poplin-Challenge
    cd <repo-directory>
 3. Install dependencies
    ```bash
@@ -57,4 +57,6 @@ Each test case mirrors a manually defined use case, with scripts stored in `/cyp
 4. Run tests
    ```bash
    npx cypress run --headed
-   
+
+## Notes
+The `cypress.env.json` file should be added to `gitignore`and those environment variables handled in a more secure way. FIX

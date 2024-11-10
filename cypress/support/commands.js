@@ -1,25 +1,26 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("login", (email, password) => {
+  // Visit the home page
+  cy.visit("/")
+  cy.get("img[alt='Poplin Logo']").should("exist")
+
+  // Choose email login
+  cy.get("[label='Continue with Email']").click()
+  cy.url().should("include", "/auth/email-login")
+
+  // Enter email and password
+  Cypress.log({
+    displayName: "LOGIN",
+    message: [`🔐 Authenticating | ${email}`],
+  });
+  cy.get("input[aria-label='Email Address']").type(email)
+  cy.get("[id=email-login-button-wrapper][label='Continue']").click()
+  cy.url().should("include", "/auth/enter-password")
+  cy.get(".login-item-replay").should("contain", email)
+  cy.get("[aria-label='Password']").type(password, { log: false })
+  cy.get("[label='Login']").click()
+
+  // Check successful login
+  cy.url().should("include", "/laundry")
+  // https://nonprod-app.poplin.co/auth/notifications
+  cy.get(".laundry-grid").should("exist")
+});
