@@ -4,7 +4,7 @@
   "description": "Node Project - Poplin Challenge QA Automation",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --headed"
+    "test": "cypress run --headed --browser chrome"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Minjor/Poplin-Challenge#readme",
   "devDependencies": {
-    "cypress": "^13.15.2"
+    "cypress": "^13.15.2",
+    "cypress-browser-permissions": "^1.1.0"
   }
 }

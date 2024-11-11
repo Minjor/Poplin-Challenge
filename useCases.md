@@ -1,7 +1,7 @@
 # Test Cases for Laundry Service Webpage: "Order Placed" Workflow
 
 ## Overview
-This document outlines the test cases for the "Order Placed" workflow within the laundry service webpage. The test cases cover scenarios for both new and repeat customers, including edge cases such as invalid input, network connectivity issues, and address not found in the Google API.
+This document outlines the test cases for the "Order Placed" workflow within the laundry service webpage. The test cases cover scenarios for both new and repeat customers, including edge cases such as invalid credit card details and payment gateway network error.
 
 ## Table of Contents
 - [Test Cases for Laundry Service Webpage: "Order Placed" Workflow](#test-cases-for-laundry-service-webpage-order-placed-workflow)
@@ -18,7 +18,7 @@ This document outlines the test cases for the "Order Placed" workflow within the
     - [Expected Results](#expected-results-1)
     - [Post-conditions](#post-conditions-1)
   - [Edge Cases](#edge-cases)
-    - [Invalid Input](#invalid-input)
+    - [Invalid Credit Card Input](#invalid-credit-card-input)
       - [Preconditions](#preconditions-2)
       - [Test Steps](#test-steps-2)
       - [Expected Results](#expected-results-2)
@@ -26,11 +26,6 @@ This document outlines the test cases for the "Order Placed" workflow within the
       - [Preconditions](#preconditions-3)
       - [Test Steps](#test-steps-3)
       - [Expected Results](#expected-results-3)
-    - [Address Not Found in Google API](#address-not-found-in-google-api)
-      - [Preconditions](#preconditions-4)
-      - [Test Steps](#test-steps-4)
-      - [Expected Results](#expected-results-4)
-    - [Post-conditions](#post-conditions-2)
 
 ## New Customer Order Placement
 
@@ -100,47 +95,31 @@ This document outlines the test cases for the "Order Placed" workflow within the
 
 ## Edge Cases
 
-### Invalid Input
+### Invalid Credit Card Input
 
 #### Preconditions
 - User is on the order placement page.
 
 #### Test Steps
-1. Enter an invalid email address and click "Continue".
-2. Enter an invalid password and click "Login".
-3. Enter invalid payment details.
-4. Enter an invalid address.
+1. Enter an invalid credit card number.
+2. Enter an invalid expiration date.
+3. Enter an invalid cvc code.
+4. Submit payment.
 
 #### Expected Results
 - Appropriate error messages are displayed for each invalid input.
-- User is prompted to correct the invalid inputs.
+- Alert modal pops up stating error.
+- Payment not made.
 
 ### Network Connectivity Issues
 
 #### Preconditions
 - User is on the order placement page.
+- Connection to payment gateway has been intercepted.
 
 #### Test Steps
-1. Disconnect the network connection.
+1. Mock payment gateway connection.
 2. Attempt to place an order.
 
 #### Expected Results
 - An error message is displayed indicating network connectivity issues.
-- User is prompted to check their network connection and try again.
-
-### Address Not Found in Google API
-
-#### Preconditions
-- User is on the order placement page.
-
-#### Test Steps
-1. Enter an address that is not found in the Google API.
-
-#### Expected Results
-- An error message is displayed indicating that the address is not found.
-- User is prompted to enter a valid address.
-
-### Post-conditions
-- User is able to correct the invalid inputs and successfully place an order.
-- User is able to reconnect to the network and successfully place an order.
-- User is able to enter a valid address and successfully place an order.

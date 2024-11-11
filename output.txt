@@ -1,0 +1,155 @@
+$ npm run test
+
+> poplin-challenge@1.0.0 test
+> cypress run --headed --browser chrome
+
+
+
+DevTools listening on ws://127.0.0.1:52484/devtools/browser/f1b33b03-d9e9-44ae-b480-0b67178516ac
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        13.15.2                                                                        │
+  │ Browser:        Chrome 130                                                                     │
+  │ Node Version:   v22.11.0 (C:\Program Files\nodejs\node.exe)                                    │
+  │ Specs:          4 found (invalidCardInput.cy.js, networkError.cy.js, newOrder.cy.js, repeatOrd │
+  │                 er.cy.js)                                                                      │
+  │ Searched:       cypress/e2e/**/*.cy.{js,jsx,ts,tsx}                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  invalidCardInput.cy.js                                                          (1 of 4)
+[browserPermissions] permission 'notifications' => 'allow'
+[browserPermissions] permission 'geolocation' => 'allow'
+[browserPermissions] permission 'images' => 'allow'
+[browserPermissions] permission 'javascript' => 'allow'
+[browserPermissions] permission 'popups' => 'ask'
+[browserPermissions] permission 'plugins' => 'ask'
+[browserPermissions] permission 'cookies' => 'allow'
+
+
+  Invalid input
+    √ Invalid credit card details (27358ms)
+
+
+  1 passing (27s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     27 seconds                                                                       │
+  │ Spec Ran:     invalidCardInput.cy.js                                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  networkError.cy.js                                                              (2 of 4)
+
+
+  Network Error
+    √ Unable to place order due to Stripe server error (30920ms)
+
+
+  1 passing (31s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     30 seconds                                                                       │
+  │ Spec Ran:     networkError.cy.js                                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  newOrder.cy.js                                                                  (3 of 4)
+
+
+  New Order
+    √ places new order (32506ms)
+
+
+  1 passing (33s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     32 seconds                                                                       │
+  │ Spec Ran:     newOrder.cy.js                                                                   │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  repeatOrder.cy.js                                                               (4 of 4)
+
+
+  Place Order
+    √ Repeat Order (25525ms)
+
+
+  1 passing (26s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     25 seconds                                                                       │
+  │ Spec Ran:     repeatOrder.cy.js                                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  invalidCardInput.cy.js                   00:27        1        1        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  networkError.cy.js                       00:30        1        1        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  newOrder.cy.js                           00:32        1        1        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  repeatOrder.cy.js                        00:25        1        1        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✔  All specs passed!                        01:56        4        4        -        -        -
+

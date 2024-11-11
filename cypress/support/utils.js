@@ -1,6 +1,6 @@
 export const login = (email, password) => {
   // Visit the home page
-  cy.visit("/")
+  cy.visit("/auth")
   cy.get("img[alt='Poplin Logo']").should("exist")
 
   // Choose email login
@@ -19,6 +19,14 @@ export const login = (email, password) => {
   cy.get("[aria-label='Password']").type(password, { log: false })
   cy.get("[label='Login']").click()
 
+  // Handle potential notification
+  cy.url().should("not.include", "/auth/enter-password")
+  cy.url().then((url) => {
+    if (url.includes("notifications")) {
+      cy.pause()
+      cy.get("#auth-pn-next-button").click();
+    }
+  });
   // Check successful login
   cy.url().should("include", "/laundry")
   cy.get("#meter-canvas").should("not.exist")
