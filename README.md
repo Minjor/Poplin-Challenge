@@ -12,7 +12,7 @@ This repository contains the automated test suite for the "Order Placed" workflo
   - [Test Coverage](#test-coverage)
   - [Setup and Execution](#setup-and-execution)
     - [Prerequisites](#prerequisites)
-  - [Notes](#notes)
+  - [Notes and assumptions](#notes-and-assumptions)
 
 ---
 
@@ -29,7 +29,7 @@ This repository contains the automated test suite for the "Order Placed" workflo
 - **Mocha**
 
 ## Test Coverage
-The automated tests validate:
+The automated tests are based off use cases for the "Order Placed" workflow, found in `useCases.md`: MATCH CASES HERE OR KEEP ONLY `useCases.md`
 1. **Core Scenarios**:
    - New customer order placement.
    - Repeat customer order placement.
@@ -58,5 +58,13 @@ Each test case mirrors a manually defined use case, with scripts stored in `/cyp
    ```bash
    npx cypress run --headed
 
-## Notes
-The `cypress.env.json` file should be added to `gitignore`and those environment variables handled in a more secure way. FIX
+## Notes and assumptions
+The `cypress.env.json` file should be added to `gitignore`and those environment variables handled in a more secure way.
+
+Talk about POM vs Page Action Model, link Gleb remarks on this. Use POM then switch to page actions if time allows. Explain decision.
+
+For mobile automation, 
+
+cutting corners because of time constrian
+
+Regarding assumptions, new and repeat customer only differentiated in the type of order they made, although it is understandable that a new customer should setup everything from scratch (i.e. no preloaded profile), this had to be overlooked because of time constrains.

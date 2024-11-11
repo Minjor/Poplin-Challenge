@@ -1,0 +1,9 @@
+{
+    "profile": "default",
+    "type": "repeat",
+    "paymentDetails": {
+      "cardNumber": "4111111111111111",
+      "expDate": "1228",
+      "cvc": "123"
+    }
+  }

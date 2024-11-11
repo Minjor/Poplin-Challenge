@@ -1,0 +1,15 @@
+{
+    "profile": "default",
+    "type": "new",
+    "deliverySpeed": "Regular",
+    "bagCount": {
+      "regular": 1
+    },
+    "oversizedItems": 0,
+    "protectionPlan": "Premium",
+    "paymentDetails": {
+      "cardNumber": "4111111111111111",
+      "expDate": "1228",
+      "cvc": "123"
+    }
+  }
